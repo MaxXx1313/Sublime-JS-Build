@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 // var mocha = require('mocha');
 module.exports = MyReporter;
 

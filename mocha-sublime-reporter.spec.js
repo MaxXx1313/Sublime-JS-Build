@@ -1,4 +1,5 @@
-
+/* jshint esversion: 6 */
+// jshint multistr:true
 
 // todo: move to a separate file
 const assert = require('assert');
@@ -9,7 +10,7 @@ describe('getErrorSource [UNIT]', function(){
 
 
   it('Generic Error #1', function(){
-    let input = 'Error: error 1\n    at timeout.then (throttle.js:26:15)'
+    let input = 'Error: error 1\n    at timeout.then (throttle.js:26:15)';
     let expected = {
       file:'throttle.js',
       line:'26',
@@ -90,7 +91,7 @@ describe('getErrorSource [UNIT]', function(){
 
 
   it('Filename contains [ and ]', function(){
-    let input = 'Error: error 1\n    at timeout.then (thr[o]ttle.js:26:15)'
+    let input = 'Error: error 1\n    at timeout.then (thr[o]ttle.js:26:15)';
     let expected = {
       file:'thr[o]ttle.js',
       line:'26',
