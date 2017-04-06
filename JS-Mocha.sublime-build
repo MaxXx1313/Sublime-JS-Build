@@ -7,5 +7,20 @@
 
   "env" : {
     "NODE_ENV":"test"
-  }
+  },
+
+  "variants": [
+    {
+      "name": "Current file",
+      // "cmd": "mocha --full-trace --reporter \"$packages/JS-Build/mocha-sublime-reporter.js\" \"$file\" ",
+    },
+    {
+      "name": "Spec files",
+      "cmd": "mocha --full-trace --reporter \"$packages/JS-Build/mocha-sublime-reporter.js\" --fgrep \"spec\" \"$file_path\" ",
+    },
+    {
+      "name": "Project",
+      "cmd": "mocha --full-trace --reporter \"$packages/JS-Build/mocha-sublime-reporter.js\" ",
+    }
+  ]
 }
