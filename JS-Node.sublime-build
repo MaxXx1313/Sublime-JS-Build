@@ -1,0 +1,7 @@
+{
+  "cmd": "node \"$file\" ",
+  "shell":true,
+  "selector": "source.js",
+
+  "file_regex":"(.*):(\\d+)$"
+}

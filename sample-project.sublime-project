@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+  "build_systems": [
+    {
+      "name": "Run with args",
+      "shell":true,
+      "cmd": ["node", "$file", "some", "args"]
+    }
+  ]
+}
