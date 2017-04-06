@@ -1,0 +1,11 @@
+{
+  "cmd": "mocha --full-trace --reporter \"$packages/JS-Build/mocha-sublime-reporter.js\" \"$file\" ",
+  "shell":true,
+  "selector": "source.js",
+
+  "file_regex":"fail: \\[.*?\\] at ([\\w\\\\\\/:\\.]+):(\\d+):(\\d+)\\s*(.{0,1024})",
+
+  "env" : {
+    "NODE_ENV":"test"
+  }
+}
