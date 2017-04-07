@@ -131,4 +131,35 @@ describe('file_regex [UNIT]', function(){
 
   });
 
+
+
+  it('test2', function(){
+    let input = "module.js:457\n\
+    throw err;\n\
+    ^\n\
+\n\
+Error: Cannot find module 'pouchdb'\n\
+    at Function.Module._resolveFilename (module.js:455:15)\n\
+    at startup (bootstrap_node.js:149:9)\n\
+    at bootstrap_node.js:509:3";
+
+    let r = new RegExp("^(.*?):(\\d+)()\\n.*\\n.*\\n\\nError: (.*)");
+
+    let matchExpected = [
+        input,
+        'module.js',
+        '457',
+        '', // 4
+        "Cannot find module 'pouchdb'",
+      ];
+      matchExpected.input = input;
+      matchExpected.index = 0;
+
+      let match = r.exec(input);
+      // console.log(match);
+
+      assert.deepEqual(match, matchExpected);
+
+  });
+
 });

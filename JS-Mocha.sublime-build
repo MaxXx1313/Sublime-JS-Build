@@ -12,6 +12,7 @@
   "variants": [
     {
       "name": "Current file",
+      "cmd":"mocha",
       // "cmd": "mocha --full-trace --reporter \"$packages/JS-Build/mocha-sublime-reporter.js\" \"$file\" ",
     },
     {

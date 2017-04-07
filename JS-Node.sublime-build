@@ -3,5 +3,6 @@
   "shell":true,
   "selector": "source.js",
 
-  "file_regex":"(.*):(\\d+)$"
+  "file_regex":"(.*):(\\d+)$",
+  "word_wrap":"False"
 }
