@@ -53,14 +53,17 @@ function getErrorSource(err){
   if(errString.indexOf('AssertionError:') >= 0 ){
     // AssertionError
     errString = errString.replace(/\n/g, ' ').trim();
-    fileInfo = errString.match(/.*\s*at (.*?):(\d+):(\d+)$/) || [];
-    // console.log(fileInfo);
-  } else {
-    // common error
+    fileInfo = errString.match(/.*\s*at (.*?):(\d+):(\d+)$/);
+  }
+
+  if(!fileInfo){
+    // common error & strange assertion error
     errString = errString.split('\n', 2).join(' ').trim();
     // console.log('errString', errString)
-    fileInfo = errString.match(/\s*at\s*.*?\((.*?):(\d+):(\d+)\)$/) || [];
+    fileInfo = errString.match(/\s*at\s*.*?\((.*?):(\d+):(\d+)\)$/);
   }
+  fileInfo = fileInfo || [];
+
   // console.log(stack);
   var file = fileInfo[1];
   var line = fileInfo[2];

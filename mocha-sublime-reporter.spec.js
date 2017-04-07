@@ -90,6 +90,8 @@ describe('getErrorSource [UNIT]', function(){
   });
 
 
+
+
   it('Filename contains [ and ]', function(){
     let input = 'Error: error 1\n    at timeout.then (thr[o]ttle.js:26:15)';
     let expected = {
@@ -128,6 +130,41 @@ describe('file_regex [UNIT]', function(){
     // console.log(match);
 
     assert.deepEqual(match, matchExpected);
+
+  });
+
+
+
+  it('test 2', function(){
+    let input = "module.js:457\n\
+    throw err;\n\
+    ^\n\
+\n\
+Error: Cannot find module 'pouchdb'\n\
+    at Function.Module._resolveFilename (module.js:455:15)\n\
+    at startup (bootstrap_node.js:149:9)\n\
+    at bootstrap_node.js:509:3";
+
+    let r = new RegExp("^(.*?):(\\d+)()[\\s\\S]*Error: (.*)");
+
+    let matchExpected = [
+        input,
+        'module.js',
+        '457',
+        '', // 4
+        "Cannot find module 'pouchdb'",
+      ];
+      matchExpected.input = input;
+      matchExpected.index = 0;
+
+      let match = r.exec(input);
+      // console.log(match);
+
+      assert.equal(match[1], matchExpected[1]);
+      assert.equal(match[2], matchExpected[2]);
+      assert.equal(match[3], matchExpected[3]);
+      assert.equal(match[4], matchExpected[4]);
+      // assert.deepEqual(match, matchExpected);
 
   });
 
