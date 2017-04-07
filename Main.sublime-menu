@@ -1,0 +1,19 @@
+[
+    {
+        "id": "tools",
+        "children": [
+            {
+                "id": "npm",
+                "caption": "NPM",
+
+                "children": [
+                    {
+                        "id": "npm_install",
+                        "command": "npm_install",
+                        "caption": "Install"
+                    }
+                ]
+            }
+        ]
+    }
+]
