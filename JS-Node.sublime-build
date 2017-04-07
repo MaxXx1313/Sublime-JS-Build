@@ -3,5 +3,12 @@
   "shell":true,
   "selector": "source.js",
 
-  "file_regex":"(.*):(\\d+)$"
+  "file_regex":"(.*):(\\d+)",
+
+  "variants": [
+    {
+      "name": "Wrapper",
+      "cmd":["node", "$packages/JS-Build/run.js", "$file"]
+    }
+  ]
 }

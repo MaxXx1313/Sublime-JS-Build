@@ -1,5 +1,5 @@
 {
-  "cmd": "mocha --reporter \"$packages/JS-Build/mocha-sublime-reporter.js\" \"$file\" ",
+  "cmd": ["mocha", "--reporter", "$packages/JS-Build/mocha-sublime-reporter.js", "$file"],
   "shell":true,
   "selector": "source.js",
 
